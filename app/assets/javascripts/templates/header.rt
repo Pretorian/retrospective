@@ -1,0 +1,21 @@
+<rt-require dependency="../components/ContributorList.jsx" as="ContributorList"/>
+<div className="header">
+    <ContributorList />
+    <div className="popup-menu">
+        <a className="{this.state.popupActivated ? 'active ': ''} fa fa-reorder"
+            onClick={this.toggleMenu}>
+        </a>
+        <ul className="{this.state.popupActivated ? '' : 'hidden'}">
+            <li><a onClick={this.goHome}>My Retrospectives</a></li>
+            <li><a onClick={this.goHome}>Create New</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+    <h1>
+        <span rt-if="this.state.retrospective">
+            {this.state.retrospective.name}
+            <span className="slash">//</span>
+        </span>
+        retrospective
+    </h1>
+</div>

@@ -1,0 +1,7 @@
+<li class="card-wrapper full-width faint">
+    <div class="card small-radius">
+        <textarea className="new-note"
+            placeholder="Start typing to add a new note"
+            onKeyUp={this.keyupTriggered}></textarea>
+    </div>
+</li>

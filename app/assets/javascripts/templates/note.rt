@@ -1,0 +1,43 @@
+<li className="card-wrapper full-width {this.state.filtered ? 'hidden' : ''}">
+    <div class="card small-radius">
+        <div class="card-content">
+            {this.state.note.content}
+        </div>
+        <div class="card-footer bordered relative">
+            <span title="{this.state.note.user.firstName} {this.state.note.user.lastName}"
+                className="initials"
+                rt-if="this.state.note.user">
+                {this.state.note.user.initials}
+            </span>
+            <span title="loading" className="initials" rt-if="!this.state.note.user">
+                <i class="fa fa-spin fa-circle-o-notch"></i>
+            </span>
+            <span rt-if="this.state.ownsNote">
+                <a className="fa fa-times" onClick={this.removeNote}></a>
+            </span>
+            <div className="user-rating-popup"
+                onMouseOver={this.hover}
+                onMouseOut={this.unhover}>
+
+                <a className="note-rating {this.state.note.noteRating > 0 ? 'active' : ''}"
+                    onClick={this.addNoteRating}>
+                    <i class="fa fa-plus"></i> {this.state.note.noteRating}
+                </a>
+                <div rt-if="this.state.note.noteRatings.length"
+                    className="{this.state.isHovering ? 'hover': ''}">
+                    <i className="fa fa-caret-left"></i>
+                    <ul>
+                        <li rt-repeat="rating in this.state.note.noteRatings"
+                            key="note-{this.state.note.identity}-{ratingIndex}">
+                            <span rt-if="!rating.user">User</span>
+                            <span rt-if="rating.user">
+                                {rating.user.firstName} {rating.user.lastName}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /card-footer -->
+
+    </div>
+</li>

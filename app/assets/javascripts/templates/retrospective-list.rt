@@ -1,0 +1,28 @@
+<rt-require dependency="../components/RetrospectiveListItem.jsx" as="RetrospectiveListItem"/>
+<rt-require dependency="../components/CreateRetrospectiveForm.jsx" as="CreateRetrospectiveForm"/>
+
+<div rt-if="!this.state.retrospectiveLoaded && this.state.user" className="section">
+    <h2 class="welcome">Welcome {this.state.user.firstName} {this.state.user.lastName}</h2>
+    <CreateRetrospectiveForm rt-if="this.state.appReady" />
+    <div className="retro-list" rt-if="this.state.appReady">
+        <RetrospectiveListItem
+            rt-if="this.state.retrospectives.length"
+            rt-repeat="retrospective in this.state.retrospectives"
+            data={retrospective}
+            key="retro-list-{retrospectiveIndex}"
+        />
+        <div rt-if="this.state.retrospectives.length && !this.state.allLoaded"
+          className="load-all-wrapper clear">
+          <a onClick={this.loadAllRetrospectives}>Load All <i className="fa fa-plus"></i></a>
+        </div>
+        <div rt-if="!this.state.retrospectives.length" className="no-retrospectives">
+           Hi there! It looks like you haven't created any retrospectives yet. If you're
+           feeling like it's a time to reflect -- recall what went exceptionally well, and
+           what you'd rather not remember -- simply create a retrospective using the textbox
+           above
+        </div>
+    </div>
+    <div rt-if="!this.state.appReady" className="big-spinner">
+        <i className="fa fa-spin fa-circle-o-notch"></i>
+    </div>
+</div>

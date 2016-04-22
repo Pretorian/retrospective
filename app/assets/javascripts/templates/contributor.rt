@@ -1,0 +1,12 @@
+<li className="contributor">
+    <span
+        title="{this.state.contributor.firstName} {this.state.contributor.lastName}"
+        onClick={this.filterUser}
+        className="initials
+            {this.state.isTyping ? 'typing' : ''}
+            {!this.state.contributor.identity ? 'selected' : ''}
+            {this.state.contributor.identity == this.state.contributorToFilterBy ? 'filter' : ''}
+        ">
+        {this.state.contributor.initials}
+    </span>
+</li>

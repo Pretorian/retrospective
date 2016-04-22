@@ -1,0 +1,9 @@
+<div className="create-retrospective-form">
+    <form onSubmit={this.createRetrospective}>
+        <input type="text" name="name"
+            id="retrospective-name-field"
+            placeholder="Create a new retrospective by entering a name and pressing enter"
+            required />
+    </form>
+</div>
+

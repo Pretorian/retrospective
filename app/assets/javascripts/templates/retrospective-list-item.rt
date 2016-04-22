@@ -1,0 +1,26 @@
+<a class="card-wrapper" onClick={this.loadRetrospective}>
+    <div class="card squared">
+        <h4>{this.state.retrospective.name}</h4>
+        <div class="circles">
+            <div>
+                <span class="status well">{this.state.designationCounts[0]}</span>
+                <canvas id="circle-{this.state.retrospective.slug}-0" width="60" height="60"></canvas>
+                <i>went well</i>
+            </div>
+            <div>
+                <span class="status needs-work">{this.state.designationCounts[1]}</span>
+                <canvas id="circle-{this.state.retrospective.slug}-1" width="60" height="60"></canvas>
+                <i>needs work</i>
+            </div>
+            <div>
+                <span class="status unwell">{this.state.designationCounts[2]}</span>
+                <canvas id="circle-{this.state.retrospective.slug}-2" width="60" height="60"></canvas>
+                <i>unwell</i>
+            </div>
+        </div>
+        <div class="card-footer">
+            <span className="pull-right faux-link">View <i class="fa fa-arrow-circle-right"></i></span>
+            <i className="date">{this.state.retrospective.createdAt}</i>
+        </div>
+    </div>
+</a>

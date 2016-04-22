@@ -1,0 +1,9 @@
+<rt-require dependency="../components/Header.jsx" as="Header"/>
+<rt-require dependency="../components/Retrospective.jsx" as="Retrospective"/>
+<rt-require dependency="../components/RetrospectivesList.jsx" as="RetrospectivesList"/>
+
+<div>
+    <Header />
+    <RetrospectivesList />
+    <Retrospective />
+</div>

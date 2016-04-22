@@ -1,0 +1,16 @@
+{
+  "name": "Retrospective",
+  "version": "0.0.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "components-font-awesome": "*",
+    "node-uuid": "1.4.3"
+  }
+}

@@ -1,0 +1,44 @@
+<rt-require dependency="../components/Note.jsx" as="Note" />
+<rt-require dependency="../components/CreateNoteForm.jsx" as="CreateNoteForm" />
+
+<div className="section" rt-if="this.state.retrospective">
+    <div className="tri-column">
+        <div className="col">
+            <h3>what went well</h3>
+            <ul>
+                <Note
+                    rt-repeat="note in this.state.wentWellNotes"
+                    key="note-{note.identity}"
+                    data={note}
+                    slug={this.state.retrospective.slug}>
+                </Note>
+                <CreateNoteForm designation={0} slug={this.state.retrospective.slug} />
+            </ul>
+        </div>
+        <div className="col">
+            <h3>what needs improvement</h3>
+            <ul>
+                <Note
+                    rt-repeat="note in this.state.needsImprovementNotes"
+                    key="note-{note.identity}"
+                    data={note}
+                    slug={this.state.retrospective.slug}>
+                </Note>
+                <CreateNoteForm designation={1} slug={this.state.retrospective.slug} />
+            </ul>
+        </div>
+        <div className="col">
+            <h3>what did not go well</h3>
+            <ul>
+                <Note
+                    rt-repeat="note in this.state.unwellNotes"
+                    key="note-{note.identity}"
+                    data={note}
+                    slug={this.state.retrospective.slug}>
+                </Note>
+                <CreateNoteForm designation={2} slug={this.state.retrospective.slug} />
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

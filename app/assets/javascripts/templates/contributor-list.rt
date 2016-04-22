@@ -1,0 +1,10 @@
+<rt-require dependency="../components/Contributor.jsx" as="Contributor"/>
+<div rt-if="this.state.users.length" className="active-users">
+    <ul>
+        <Contributor
+            data={user}
+            key="contributor-{userIndex}"
+            rt-repeat="user in this.state.users"
+        />
+    </ul>
+</div>
