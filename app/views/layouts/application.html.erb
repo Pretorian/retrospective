@@ -4,11 +4,14 @@
     <title>Retrospective</title>
     <script type="text/javascript">
       window.AppData = {};
-      window.AppData.user = null;
+      window.AppData.user = <%= raw user_info() %>;
     </script>
     <%= stylesheet_link_tag 'app' %>
+    <%= csrf_meta_tag %>
   </head>
-  <body>
+  <body id="retro-app">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag '//js.pusher.com/2.2/pusher.min.js' %>
     <%= javascript_include_tag 'app' %>

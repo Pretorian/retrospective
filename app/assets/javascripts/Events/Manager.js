@@ -8,8 +8,15 @@ EventManager.prototype.connect = function() {
     if (this.channel) {
         return;
     }
+    var options = {
+        auth: {
+            headers: {
+              'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+            }
+        }
+    };
 
-    this.pusher = new Pusher(AppData.pusherCredentials.appKey);
+    this.pusher = new Pusher(AppData.pusherCredentials.appKey, options);
     this.channel = this.pusher.subscribe('presence-' + AppData.pusherCredentials.channel);
 };
 

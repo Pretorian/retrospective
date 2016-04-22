@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  get 'pusher/auth'
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  post 'pusher/auth'
 
   get 'retrospective/index'
+  post 'retrospective/list.json' => 'retrospective#list'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'retrospective#index'
+  root to:'retrospective#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
