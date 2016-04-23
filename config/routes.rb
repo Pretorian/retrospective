@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'retrospective/index'
   post 'retrospective/list.json' => 'retrospective#list'
+  post 'retrospective/create.json' => 'retrospective#create'
 
   root to:'retrospective#index'
 

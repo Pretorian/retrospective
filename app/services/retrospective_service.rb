@@ -10,4 +10,20 @@ class RetrospectiveService
       retrospective.provide_retrospective_interest
     end
   end
+
+  def create_retrospective(user_identity, name)
+    retrospective_creation_service = Retrospective::RetrospectiveCreationService.new(
+      @retrospective_repository
+    )
+
+    retrospective = retrospective_creation_service.create_retrospective(
+      user_identity,
+      name,
+      DateTime.now
+    )
+
+    @retrospective_repository.flush()
+
+    retrospective.provide_retrospective_interest
+  end
 end

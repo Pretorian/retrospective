@@ -4,6 +4,18 @@ class Retrospective::Retrospective < ActiveRecord::Base
   has_many :notes, through: :note_maps, class_name: 'Retrospective::Note'
   has_many :note_maps, class_name: 'Retrospective::NoteMap'
 
+  def initialize(user_identity, name, created_at)
+    super({
+      user_identity: user_identity,
+      name: name,
+      created_at: created_at
+    })
+  end
+
+  def set_slug(slug)
+    self.slug = slug
+  end
+
   def provide_notes_interest
     self.notes.map do |note|
       note.provide_note_interest

@@ -15,4 +15,11 @@ class RetrospectiveController < ApplicationController
       .display_retrospectives_for_user(current_user.identity, params['count'])
       .to_json
   end
+
+  def create
+    params = self.request_data()
+    render :json => @retrospective_service
+      .create_retrospective(current_user.identity, params['name'])
+      .to_json
+  end
 end
