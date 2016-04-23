@@ -117,8 +117,8 @@ RetrospectiveActions.loadRetrospectives.listen(function(count, replace) {
         return;
     }
 
-    ajax.post('/retrospective/list.json', {count: count}, function(json) {
-        RetrospectiveActions.retrospectivesLoaded(json.retrospectives, replace);
+    ajax.post('/retrospective/list.json', {count: count}, function(retrospectives) {
+        RetrospectiveActions.retrospectivesLoaded(retrospectives, replace);
     });
 });
 
@@ -178,7 +178,10 @@ var makeRequest = function(type, url, data, callback) {
 
     var requestData = {
         method: type,
-        url: url
+        url: url,
+        headers: {
+            'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+        }
     };
 
     if (typeof data !== 'function') {
@@ -222,7 +225,6 @@ var RetrospectiveApp = {
         React.render(React.createElement(App, null), document.getElementById('retrospective-app'));
         this.initRouting();
         this.initKeyBindings();
-        window.alert('doing stuff');
         RetrospectiveActions.loadRetrospectives(6);
     },
     initRouting: function() {

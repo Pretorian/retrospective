@@ -13,7 +13,10 @@ var makeRequest = function(type, url, data, callback) {
 
     var requestData = {
         method: type,
-        url: url
+        url: url,
+        headers: {
+            'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+        }
     };
 
     if (typeof data !== 'function') {

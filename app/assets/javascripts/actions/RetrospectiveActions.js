@@ -34,8 +34,8 @@ RetrospectiveActions.loadRetrospectives.listen(function(count, replace) {
         return;
     }
 
-    ajax.post('/retrospective/list.json', {count: count}, function(json) {
-        RetrospectiveActions.retrospectivesLoaded(json.retrospectives, replace);
+    ajax.post('/retrospective/list.json', {count: count}, function(retrospectives) {
+        RetrospectiveActions.retrospectivesLoaded(retrospectives, replace);
     });
 });
 
