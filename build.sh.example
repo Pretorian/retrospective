@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Install our dependencies / compile assets
+bower install && npm install && grunt;
+bundle install;
+
+# Migrate our database
+rake db:migrate;
+
+# Change these to pusher credentials (see https://pusher.com/)
+PUSHER_CHANNEL='Pusher_channel' \
+PUSHER_APP_ID='App_id' \
+PUSHER_APP_KEY='App_key' \
+PUSHER_APP_SECRET='App_secret' \
+rails server;
