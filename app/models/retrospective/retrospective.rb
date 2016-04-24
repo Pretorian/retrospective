@@ -16,6 +16,20 @@ class Retrospective::Retrospective < ActiveRecord::Base
     self.slug = slug
   end
 
+  def add_note(identity, content, designation, user_identity, created_at)
+    note = Retrospective::Note.new(
+      identity,
+      content,
+      designation,
+      user_identity,
+      created_at
+    )
+
+    self.notes.push(note)
+
+    note
+  end
+
   def provide_notes_interest
     self.notes.map do |note|
       note.provide_note_interest
@@ -31,6 +45,16 @@ class Retrospective::Retrospective < ActiveRecord::Base
       userId: self.user_identity,
       notes: self.provide_notes_interest
     }
+  end
+
+  def add_rating_for_note(note_identity, user_identity)
+    note = self.notes.find { |note| note.identity === note_identity }
+    note.add_rating(user_identity)
+  end
+
+  def remove_note(note_identity)
+    note = self.notes.find { |note| note.identity === note_identity }
+    self.notes.destroy(note)
   end
 end
 

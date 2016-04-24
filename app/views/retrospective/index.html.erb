@@ -1,7 +1,7 @@
 <script type="text/javascript">
-  window.AppData.slug = '';
+  window.AppData.slug = "<%= @retrospective ? @retrospective[:slug] : '' %>";
   window.AppData.pusherCredentials = <%= raw pusher_credentials() %>;
-  window.AppData.retrospective = null;
+  window.AppData.retrospective = <%= raw @retrospective ? @retrospective.to_json : 'null' %>;
 </script>
 <div class="container">
   <div id="retrospective-app"></div>

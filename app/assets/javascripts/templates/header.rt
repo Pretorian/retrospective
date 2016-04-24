@@ -8,7 +8,7 @@
         <ul className="{this.state.popupActivated ? '' : 'hidden'}">
             <li><a onClick={this.goHome}>My Retrospectives</a></li>
             <li><a onClick={this.goHome}>Create New</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="/users/sign_out">Logout</a></li>
         </ul>
     </div>
     <h1>

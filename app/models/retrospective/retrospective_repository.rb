@@ -4,7 +4,10 @@ class Retrospective::RetrospectiveRepository
   end
 
   def many_for_user(user_identity, count)
-    Retrospective::Retrospective.limit(count).where(user_identity: user_identity)
+    Retrospective::Retrospective
+      .where(user_identity: user_identity)
+      .order(created_at: :desc)
+      .limit(count)
   end
 
   def one_with_slug(slug)
@@ -21,5 +24,9 @@ class Retrospective::RetrospectiveRepository
     end
 
     @retrospectives = []
+  end
+
+  def persist(retrospective)
+    retrospective.save
   end
 end

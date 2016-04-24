@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :init
 
+  def init
+
+  end
+
   def request_data
     JSON.parse(request.body.read)
   end

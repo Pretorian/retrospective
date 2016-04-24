@@ -17,9 +17,9 @@ ContributorActions.updateTypingStatus.listen(function(userData) {
 });
 
 ContributorActions.loadContributors.listen(function(slug) {
-    ajax.post('/retrospective/loadusers.json', {slug: slug}, function(json) {
+    ajax.post('/retrospective/loadusers.json', {slug: slug}, function(userData) {
         var users = {};
-        _.each(json.users, function (user) {
+        _.each(userData, function (user) {
             users[user.identity] = user;
         });
 

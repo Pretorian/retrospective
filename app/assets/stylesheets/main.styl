@@ -401,3 +401,53 @@ a, .faux-link
     text-align center
     a
         color #aaa
+
+.login-panel
+    width 430px
+    margin-top 100px
+    margin-left auto
+    margin-right auto
+    .shared-links
+        text-align center
+        margin-top 2em
+        margin-bottom 1em
+        ul, li
+            list-style-type none
+        li
+            display inline-block
+            margin-left 5px
+            border-left 1px solid #ddd
+            padding-left: 5px
+            &:first-child
+                margin-left 0
+                padding-left 0
+                border-left 0
+    .actions
+        input
+            border 0
+            background accent
+            color white
+            padding 10px
+            border-radius 4px
+            font-size 14px
+    .field
+        margin-top 1.5em
+    input[type='email'], input[type='password'], input[type='text']
+        font-size 24px
+        font-weight 200
+        border none
+        border-bottom 1px solid #ddd
+        -webkit-outline none
+        outline none
+        width 100%
+    >div
+        padding 1em 2.5em
+        background white
+        // border-radius 25px
+        box-shadow rgba(0, 0, 0, 0.1) 0px 1px 3px 0px
+
+.pull-right
+    float right
+
+.remember-me
+    padding-top 8px
