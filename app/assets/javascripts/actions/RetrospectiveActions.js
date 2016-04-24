@@ -4,8 +4,8 @@
 
 var ajax = require('./../ajax.js');
 var ContributorActions = require('./ContributorActions.js');
-var Events = require('./../Events/Events.js');
 var EventManager = require('./../Events/Manager.js');
+var Events = require('./../Events/Events.js');
 var Reflux = require('reflux');
 
 var _changeUrl = function(path) {

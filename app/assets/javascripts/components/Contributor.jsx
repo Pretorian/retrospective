@@ -1,12 +1,11 @@
 'use strict';
 
-var React = require('react');
-var moment = require('moment');
-var Reflux = require('reflux');
-var ContributorStore = require('./../stores/ContributorStore.js');
-var RetrospectiveStore = require('./../stores/RetrospectiveStore.js');
-
 var AbstractComponent = require('./AbstractComponent.js');
+var ContributorStore = require('./../stores/ContributorStore.js');
+var moment = require('moment');
+var React = require('react');
+var Reflux = require('reflux');
+var RetrospectiveStore = require('./../stores/RetrospectiveStore.js');
 
 var Contributor = AbstractComponent.create({
     data: function() {
