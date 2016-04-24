@@ -32,4 +32,4 @@ production:
   <<: *default
   database: retrospective_production
   username: root
-  password: <%= ENV['POTATOSALAD_DATABASE_PASSWORD'] %>
+  password: <%= ENV['RETROSPECTIVE_DATABASE_PASSWORD'] %>

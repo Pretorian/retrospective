@@ -17,6 +17,7 @@ class RetrospectiveService
       @retrospective_repository
     )
 
+    # Let our domain service do the heavy lifting
     retrospective = retrospective_creation_service.create_retrospective(
       user_identity,
       name,

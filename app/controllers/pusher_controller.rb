@@ -1,10 +1,6 @@
 require 'pusher'
 
 class PusherController < ApplicationController
-	def init
-
-  end
-
   def auth
 		# @TODO I don't like that we're leaking configuration into our controller
 		# Figure this out later

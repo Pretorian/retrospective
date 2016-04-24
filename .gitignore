@@ -21,3 +21,5 @@ build.sh
 
 node_modules
 .build
+
+bfg-1.12.12.jar
