@@ -3,7 +3,7 @@
 ![Retrospective](https://raw.githubusercontent.com/scottdover/retrospective/master/docs/screenshot.png)
 
 At the end of every sprint, we developers ask ourselves, what did we do this sprint, and how
-do we feel about that. This app encompasses those behaviors, and gives the user a history
+do we feel about that? This app encompasses those behaviors, and gives the user a history
 of information to find out where we are, and where we're going.
 
 ## How to build
