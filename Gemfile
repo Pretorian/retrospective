@@ -6,6 +6,7 @@ gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'pusher', '0.17.0'
 gem 'rails', '4.2.6'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -23,3 +24,4 @@ group :development do
   gem 'spring'
 end
 
+ruby '2.2.0'
