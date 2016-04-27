@@ -11,19 +11,19 @@ class RetrospectiveController < ApplicationController
 
   def list
     request = self.request_data
-    render :json => @retrospective_service
+    render json: @retrospective_service
       .display_retrospectives_for_user(current_user.identity, request['count'])
   end
 
   def create
     request = self.request_data
-    render :json => @retrospective_service
+    render json: @retrospective_service
       .create_retrospective(current_user.identity, request['name'])
   end
 
   def save_note
     request = self.request_data['data']
-    render :json => @retrospective_service
+    render json: @retrospective_service
       .create_note_for_retrospective(
         current_user.identity,
         request['retrospectiveSlug'],
@@ -42,8 +42,7 @@ class RetrospectiveController < ApplicationController
 
   def load_users
     request = self.request_data
-    render :json => @retrospective_service
-      .display_users_for_retrospective(request['slug'])
+    render json: @retrospective_service.display_users_for_retrospective(request['slug'])
   end
 
   def increment_note_count
@@ -54,13 +53,14 @@ class RetrospectiveController < ApplicationController
       request['identity']
     )
 
-    render :json => {status: '√'}
+    render json: {status: '√'}
   end
 
   def remove_note
     request = self.request_data
-    @retrospective_service.remove_note_from_retrospective(request['slug'], request['identity'])
+    @retrospective_service
+      .remove_note_from_retrospective(request['slug'], request['identity'])
 
-    render :json => {status: '√'}
+    render json: {status: '√'}
   end
 end
