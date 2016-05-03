@@ -9,7 +9,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano', '~> 3.5.0'
+gem 'capistrano-bundler', '~> 1.1.4'
+gem 'capistrano-rails', '~> 1.1.6'
+gem 'capistrano-rvm', github: "capistrano/rvm"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
