@@ -31,5 +31,5 @@ test:
 production:
   <<: *default
   database: retrospective_production
-  username: root
+  username: sdover
   password: <%= ENV['RETROSPECTIVE_DATABASE_PASSWORD'] %>
