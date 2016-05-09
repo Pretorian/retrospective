@@ -19,3 +19,13 @@ of information to find out where we are, and where we're going.
 
  - Ruby / Rails
  - React w/ Reflux
+
+## Roadmap
+
+ - Move authentication (sign in / up) to client-side
+ - Split front-end from backend
+ - Optimize for offline usage (i.e. queue server requests, event emissions in the case server is unreachable) (look in to hoodie / offlinejs)
+ - es6-ify all the things (and switch to Webpack)
+ - Potentially refactor codebase to use Redux
+ - Research moving to socket.io over Pusher for notifications
+ - Come up with a way to create "groups" so that we can have a more sane way to manage retrospective access
