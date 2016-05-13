@@ -34,7 +34,7 @@ RetrospectiveActions.loadRetrospectives.listen(function(count, replace) {
         return;
     }
 
-    ajax.post('/retrospective/list.json', {count: count}, function(retrospectives) {
+    ajax.post('/retrospective/list', {count: count}, function(retrospectives) {
         RetrospectiveActions.retrospectivesLoaded(retrospectives, replace);
     });
 });
@@ -45,12 +45,12 @@ RetrospectiveActions.displayRetrospectiveList.listen(function() {
 
 RetrospectiveActions.removeNote.listen(function (noteData) {
     EventManager.emit(Events.NoteRemoved, noteData);
-    ajax.post('/retrospective/removenote.json', noteData);
+    ajax.post('/retrospective/removenote', noteData);
 });
 
 RetrospectiveActions.updateNoteRating.listen(function (noteData) {
     EventManager.emit(Events.NoteUpdated, noteData);
-    ajax.post('/retrospective/incrementnotecount.json', noteData);
+    ajax.post('/retrospective/incrementnotecount', noteData);
 });
 
 RetrospectiveActions.loadRetrospective.listen(function (slug) {
@@ -59,7 +59,7 @@ RetrospectiveActions.loadRetrospective.listen(function (slug) {
 });
 
 RetrospectiveActions.createRetrospective.listen(function (name) {
-    ajax.post('/retrospective/create.json', {name: name}, function (json) {
+    ajax.post('/retrospective/create', {name: name}, function (json) {
         _changeUrl('/' + json.slug);
 
         // Load up the data
@@ -74,7 +74,7 @@ RetrospectiveActions.createRetrospective.listen(function (name) {
 
 RetrospectiveActions.addNote.listen(function (noteData) {
     EventManager.emit(Events.NoteAdded, noteData);
-    ajax.post('/retrospective/savenote.json', {data: noteData});
+    ajax.post('/retrospective/savenote', {data: noteData});
 });
 
 module.exports = RetrospectiveActions;

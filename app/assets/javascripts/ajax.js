@@ -1,5 +1,6 @@
 'use strict';
 
+// @TODO Upgrade to isomorphic-fetch
 var http = require('browser-request');
 
 var requests = {};

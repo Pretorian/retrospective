@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   post 'pusher/auth'
 
   get 'retrospective/index'
-  post 'retrospective/list.json' => 'retrospective#list'
-  post 'retrospective/create.json' => 'retrospective#create'
-  post 'retrospective/savenote.json' => 'retrospective#save_note'
-  post 'retrospective/loadusers.json' => 'retrospective#load_users'
-  post 'retrospective/incrementnotecount.json' => 'retrospective#increment_note_count'
-  post 'retrospective/removenote.json' => 'retrospective#remove_note'
+  post 'retrospective/list' => 'retrospective#list'
+  post 'retrospective/create' => 'retrospective#create'
+  post 'retrospective/savenote' => 'retrospective#save_note'
+  post 'retrospective/loadusers' => 'retrospective#load_users'
+  post 'retrospective/incrementnotecount' => 'retrospective#increment_note_count'
+  post 'retrospective/removenote' => 'retrospective#remove_note'
 
   get '/:slug' => 'retrospective#load_retrospective'
 

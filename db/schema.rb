@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424151719) do
+ActiveRecord::Schema.define(version: 20160513104308) do
 
   create_table "retrospective", force: :cascade do |t|
     t.string   "user_identity", limit: 255, null: false
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 20160424151719) do
   create_table "retrospective_note_rating_map", force: :cascade do |t|
     t.integer "note_id",        limit: 4, default: 0, null: false
     t.integer "note_rating_id", limit: 4, default: 0, null: false
+  end
+
+  create_table "team_members", force: :cascade do |t|
+    t.integer "team_id",       limit: 4
+    t.string  "user_identity", limit: 36
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name",             limit: 512
+    t.string "account_identity", limit: 36
   end
 
   create_table "user", force: :cascade do |t|

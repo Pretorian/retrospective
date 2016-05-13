@@ -16,8 +16,9 @@
 !/log/.keep
 /tmp
 
-# Don't upload the build file
+# Don't upload the build / run file
 build.sh
+run.sh
 
 node_modules
 .build
