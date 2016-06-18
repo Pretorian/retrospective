@@ -12,7 +12,7 @@ class RetrospectiveController < ApplicationController
   def list
     request = self.request_data
     render json: @retrospective_service
-      .display_retrospectives_for_user(current_user.identity, request['count'])
+      .display_retrospectives_for_team(request['teamIdentity'])
   end
 
   def create
@@ -22,11 +22,11 @@ class RetrospectiveController < ApplicationController
   end
 
   def save_note
-    request = self.request_data['data']
+    request = self.request_data
     render json: @retrospective_service
       .create_note_for_retrospective(
         current_user.identity,
-        request['retrospectiveSlug'],
+        request['retrospectiveId'],
         request['identity'],
         request['content'],
         request['designation']
@@ -40,6 +40,7 @@ class RetrospectiveController < ApplicationController
     render 'index'
   end
 
+  # @TODO @DEPRECATED REMOVE ME
   def load_users
     request = self.request_data
     render json: @retrospective_service.display_users_for_retrospective(request['slug'])

@@ -1,0 +1,42 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'watch' ]
+2 info using npm@3.3.8
+3 info using node@v4.1.2
+4 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
+5 info lifecycle ThinkBack@1.0.0~prewatch: ThinkBack@1.0.0
+6 silly lifecycle ThinkBack@1.0.0~prewatch: no script for prewatch, continuing
+7 info lifecycle ThinkBack@1.0.0~watch: ThinkBack@1.0.0
+8 verbose lifecycle ThinkBack@1.0.0~watch: unsafe-perm in lifecycle true
+9 verbose lifecycle ThinkBack@1.0.0~watch: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/sdover/Desktop/work/retrospective/node_modules/.bin:/Users/sdover/.rvm/gems/ruby-2.3.0@retrospective/bin:/Users/sdover/.rvm/gems/ruby-2.3.0@global/bin:/Users/sdover/.rvm/rubies/ruby-2.3.0/bin:/Users/sdover/.rvm/bin:/usr/local/bin:/usr/local/sbin:/Users/sdover/.npm-packages/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin
+10 verbose lifecycle ThinkBack@1.0.0~watch: CWD: /Users/sdover/Desktop/work/retrospective
+11 silly lifecycle ThinkBack@1.0.0~watch: Args: [ '-c', 'cross-env gulp watch' ]
+12 silly lifecycle ThinkBack@1.0.0~watch: Returned: code: 1  signal: null
+13 info lifecycle ThinkBack@1.0.0~watch: Failed to exec watch script
+14 verbose stack Error: ThinkBack@1.0.0 watch: `cross-env gulp watch`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:233:16)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at EventEmitter.emit (events.js:172:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at ChildProcess.emit (events.js:172:7)
+14 verbose stack     at maybeClose (internal/child_process.js:818:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid ThinkBack@1.0.0
+16 verbose cwd /Users/sdover/Desktop/work/retrospective
+17 error Darwin 15.5.0
+18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "watch"
+19 error node v4.1.2
+20 error npm  v3.3.8
+21 error code ELIFECYCLE
+22 error ThinkBack@1.0.0 watch: `cross-env gulp watch`
+22 error Exit status 1
+23 error Failed at the ThinkBack@1.0.0 watch script 'cross-env gulp watch'.
+23 error This is most likely a problem with the ThinkBack package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     cross-env gulp watch
+23 error You can get their info via:
+23 error     npm owner ls ThinkBack
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

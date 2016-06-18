@@ -3,15 +3,18 @@ class Retrospective::RetrospectiveRepository
     @retrospectives = []
   end
 
-  def many_for_user(user_identity, count)
+  def many_for_team(team_identity)
     Retrospective::Retrospective
-      .where(user_identity: user_identity)
-      .order(created_at: :desc)
-      .limit(count)
+      .where(team_identity: team_identity)
+      .order(created_at: :desc);
   end
 
   def one_with_slug(slug)
     Retrospective::Retrospective.find_by(slug: slug)
+  end
+
+  def one_with_identity(identity)
+    Retrospective::Retrospective.find_by(identity: identity)
   end
 
   def add(retrospective)

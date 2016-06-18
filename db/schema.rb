@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513104308) do
+ActiveRecord::Schema.define(version: 20160608180218) do
 
   create_table "retrospective", force: :cascade do |t|
     t.string   "user_identity", limit: 255, null: false
     t.string   "name",          limit: 512
     t.string   "slug",          limit: 255, null: false
     t.datetime "created_at",                null: false
+    t.string   "team_identity", limit: 36
+    t.string   "identity",      limit: 36
   end
 
   create_table "retrospective_note", force: :cascade do |t|
@@ -51,7 +53,10 @@ ActiveRecord::Schema.define(version: 20160513104308) do
   create_table "teams", force: :cascade do |t|
     t.string "name",             limit: 512
     t.string "account_identity", limit: 36
+    t.string "identity",         limit: 36
   end
+
+  add_index "teams", ["identity"], name: "index_teams_on_identity", using: :btree
 
   create_table "user", force: :cascade do |t|
     t.string   "identity",               limit: 255

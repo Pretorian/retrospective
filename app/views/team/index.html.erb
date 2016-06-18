@@ -1,0 +1,7 @@
+<script type="text/javascript">
+  window.AppData.pusherCredentials = <%= raw pusher_credentials() %>;
+  window.AppData.teams = <%= raw @teams.to_json %>;
+</script>
+<div id="teams-app"></div>
+<%= javascript_include_tag '//js.pusher.com/2.2/pusher.min.js' %>
+<%= javascript_include_tag 'team' %>

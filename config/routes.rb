@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'team/index'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   post 'pusher/auth'
 
   get 'retrospective/index'
+  get 'retrospective' => 'retrospective#index'
   post 'retrospective/list' => 'retrospective#list'
   post 'retrospective/create' => 'retrospective#create'
   post 'retrospective/savenote' => 'retrospective#save_note'
@@ -10,9 +13,11 @@ Rails.application.routes.draw do
   post 'retrospective/incrementnotecount' => 'retrospective#increment_note_count'
   post 'retrospective/removenote' => 'retrospective#remove_note'
 
+  post 'team/users' => 'team#users'
+
   get '/:slug' => 'retrospective#load_retrospective'
 
-  root to:'retrospective#index'
+  root to:'team#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

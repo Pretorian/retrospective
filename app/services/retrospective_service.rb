@@ -5,8 +5,8 @@ class RetrospectiveService
     @user_repository = user_repository
   end
 
-  def display_retrospectives_for_user(user_identity, count)
-    retrospectives = @retrospective_repository.many_for_user(user_identity, count)
+  def display_retrospectives_for_team(team_identity)
+    retrospectives = @retrospective_repository.many_for_team(team_identity)
     retrospectives.map do |retrospective|
       retrospective.provide_retrospective_interest
     end
@@ -29,8 +29,8 @@ class RetrospectiveService
     retrospective.provide_retrospective_interest
   end
 
-  def create_note_for_retrospective(user_identity, slug, identity, content, designation)
-    retrospective = @retrospective_repository.one_with_slug(slug)
+  def create_note_for_retrospective(user_identity, retrospective_identity, identity, content, designation)
+    retrospective = @retrospective_repository.one_with_identity(retrospective_identity)
     return if not retrospective
 
     note = retrospective.add_note(

@@ -38,12 +38,13 @@ class Retrospective::Retrospective < ActiveRecord::Base
 
   def provide_retrospective_interest
     {
-      id: self.id,
+      created_at: self.created_at,
+      identity: self.identity,
       name: self.name,
+      notes: self.provide_notes_interest,
       slug: self.slug,
-      createdAt: self.created_at,
-      userId: self.user_identity,
-      notes: self.provide_notes_interest
+      team_identity: self.team_identity,
+      user_id: self.user_identity
     }
   end
 
